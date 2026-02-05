@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💘 Valentine 💘</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f0;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      color: #e60073;
+      margin-top: 100px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .yes {
+      background-color: #ff4d94;
+      color: white;
+      margin-right: 20px;
+    }
+
+    .no {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
+
+    #buttons {
+      margin-top: 40px;
+      position: relative;
+      height: 200px;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #cc0066;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Will you be my Valentine? 💘</h1>
+
+  <div id="buttons">
+    <button class="yes" onclick="yesClicked()">Yes 💖</button>
+    <button class="no" id="noBtn">No 😢</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", moveButton);
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function yesClicked() {
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("question").innerHTML = "💝";
+      document.getElementById("message").innerHTML =
+        "You make me smile more than anyone else. Happy Valentine's Day! 💕";
+    }
+  </script>
+
+</body>
+</html>
